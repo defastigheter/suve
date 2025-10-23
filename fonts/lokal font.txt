@@ -1,0 +1,38 @@
+@font-face {
+  font-family: 'Inter';
+  src: url('/fonts/inter-100 900.woff2') format('woff2');
+  /* Se till att sökvägen är korrekt! */
+  font-weight: 100 900;
+  /* Ange viktspannet för det variabla typsnittet */
+  font-style: normal;
+  /* Om du har en separat fil för italic, behöver du en till @font-face */
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url('/fonts/montserrat-100 900.woff2') format('woff2');
+  /* Se till att sökvägen är korrekt! */
+  font-weight: 100 900;
+  /* Ange viktspannet för det variabla typsnittet */
+  font-style: normal;
+  font-display: swap;
+}
+
+.font-heading {
+  font-family: 'Montserrat', sans-serif; /* 'Montserrat' pekar nu på din lokala definition */
+  font-weight: 700; /* Webbläsaren väljer närmaste tillgängliga vikt från ditt variabla eller statiska typsnitt */
+}
+
+.font-subheading {
+  font-family: 'Inter', sans-serif; /* 'Inter' pekar nu på din lokala definition */
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.font-body {
+  font-family: 'Inter', sans-serif; /* 'Inter' pekar nu på din lokala definition */
+  font-weight: 400;
+  letter-spacing: 0.02em;
+}

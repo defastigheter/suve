@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="sv">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DE fastigheter</title>
+    <link href="src/output.css" rel="stylesheet" />
+    <style>
+      /* Custom styles for demonstration purposes */
+      .grid-cols-card {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      }
+    </style>
+  </head>
+
+  <body
+    class="bg-KlipphallC-50 text-PistageC-800 dark:bg-PistageC-800 dark:text-KlipphallC-50 font-body transition-colors duration-300"
+  >
+    <div class="container mx-auto p-8 space-y-16">
+      <!-- Page Title / Branding -->
+      <header class="text-center py-10">
+        <h1
+          class="font-heading uppercase text-PistageC-800 dark:text-KlipphallC-50 text-5xl sm:text-6xl md:text-7xl mb-4"
+        >
+          Design Mood Board
+        </h1>
+        <p
+          class="font-subheading text-PistageC-600 dark:text-KlipphallC-300 text-xl md:text-2xl"
+        >
+          Showcasing core UI elements and typography
+        </p>
+      </header>
+
+      <!-- Typography -->
+      <section>
+        <h2
+          class="font-heading uppercase text-PistageC-800 dark:text-KlipphallC-50 text-3xl sm:text-3xl md:text-4xl lg:text-4xl xl:text-5xl mb-8"
+        >
+          Typography Showcase
+        </h2>
+
+        <!-- Main Heading Style -->
+        <div
+          class="mb-10 p-6 bg-KlipphallC-100 dark:bg-PistageC-700 rounded-lg shadow-md"
+        >
+          <p
+            class="font-body text-sm text-PistageC-600 dark:text-KlipphallC-300 mb-2"
+          >
+            Style: Main Heading (Typically for H1)
+          </p>
+          <div
+            class="font-heading uppercase text-PistageC-800 dark:text-KlipphallC-50 text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-tight"
+          >
+            Main Heading Example
+          </div>
+        </div>
+
+        <!-- Subheading Style -->
+        <div
+          class="mb-10 p-6 bg-KlipphallC-100 dark:bg-PistageC-700 rounded-lg shadow-md"
+        >
+          <p
+            class="font-body text-sm text-PistageC-600 dark:text-KlipphallC-300 mb-2"
+          >
+            Style: Subheading (Typically for H2, H3, H4)
+          </p>
+          <div
+            class="font-subheading text-PistageC-800 dark:text-KlipphallC-50 text-2xl sm:text-3xl md:text-4xl lg:text-4xl xl:text-5xl leading-snug"
+          >
+            Subheading Example
+          </div>
+          <div
+            class="font-subheading text-BokashiC-600 dark:text-BokashiC-400 mt-4 text-2xl sm:text-3xl md:text-4xl lg:text-4xl xl:text-5xl leading-snug"
+          >
+            Accent Subheading
+          </div>
+        </div>
+
+        <!-- Body Text Style -->
+        <div
+          class="mb-10 p-6 bg-KlipphallC-100 dark:bg-PistageC-700 rounded-lg shadow-md"
+        >
+          <p
+            class="font-body text-sm text-PistageC-600 dark:text-KlipphallC-300 mb-2"
+          >
+            Style: Body Text (Typically for p, li, a)
+          </p>
+          <p
+            class="font-body text-PistageC-800 dark:text-KlipphallC-50 text-base sm:text-lg md:text-xl leading-relaxed"
+          >
+            This is standard body text. Lorem ipsum dolor sit amet, consectetur
+            adipiscing elit. An
+            <a
+              href="#"
+              class="underline hover:text-BokashiC-600 dark:hover:text-BokashiC-400 transition-colors duration-200"
+              >inline link</a
+            >
+            would also use this body style.
+          </p>
+          <p
+            class="font-body text-PistageC-800 dark:text-KlipphallC-50 text-lg sm:text-xl md:text-2xl mt-4 leading-relaxed"
+          >
+            This is a slightly larger lead paragraph, good for introductions in
+            hero sections.
+          </p>
+        </div>
+
+        <!-- Smaller Text/Caption Style -->
+        <div
+          class="p-6 bg-KlipphallC-100 dark:bg-PistageC-700 rounded-lg shadow-md"
+        >
+          <p
+            class="font-body text-sm text-PistageC-600 dark:text-KlipphallC-300 mb-2"
+          >
+            Style: Small Text / Caption
+          </p>
+          <p
+            class="font-body text-PistageC-700 dark:text-KlipphallC-200 text-xs sm:text-sm md:text-base leading-snug"
+          >
+            This text is ideal for captions, timestamps, or less prominent
+            information. Fusce dapibus, tellus ac cursus commodo, tortor mauris
+            condimentum nibh.
+          </p>
+        </div>
+      </section>
+
+      <!-- Buttons -->
+      <section>
+        <h2
+          class="font-heading uppercase text-PistageC-800 dark:text-KlipphallC-50 text-3xl sm:text-3xl md:text-4xl lg:text-4xl xl:text-5xl mb-8"
+        >
+          Button Styles
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Primary Button -->
+          <div
+            class="p-6 bg-KlipphallC-100 dark:bg-PistageC-700 rounded-lg shadow-md flex flex-col items-center justify-center"
+          >
+            <p
+              class="font-body text-sm text-PistageC-600 dark:text-KlipphallC-300 mb-4"
+            >
+              Primary Button
+            </p>
+            <button
+              class="px-8 py-3 bg-BokashiC-600 text-KlipphallC-50 font-body font-semibold rounded-lg shadow-md hover:bg-BokashiC-700 focus:outline-none focus:ring-2 focus:ring-BokashiC-500 focus:ring-opacity-75 transition-all duration-200 text-lg"
+            >
+              Call to Action
+            </button>
+            <button
+              class="mt-4 px-8 py-3 bg-BokashiC-400 text-PistageC-800 dark:text-KlipphallC-50 font-body font-semibold rounded-lg shadow-md cursor-not-allowed opacity-70 text-lg"
+              disabled
+            >
+              Disabled State
+            </button>
+          </div>
+
+          <!-- Secondary Button -->
+          <div
+            class="p-6 bg-KlipphallC-100 dark:bg-PistageC-700 rounded-lg shadow-md flex flex-col items-center justify-center"
+          >
+            <p
+              class="font-body text-sm text-PistageC-600 dark:text-KlipphallC-300 mb-4"
+            >
+              Secondary Button
+            </p>
+            <button
+              class="px-8 py-3 bg-transparent border-2 border-BokashiC-600 text-BokashiC-600 font-body font-semibold rounded-lg hover:bg-BokashiC-50 dark:hover:bg-PistageC-600 focus:outline-none focus:ring-2 focus:ring-BokashiC-500 focus:ring-opacity-75 transition-all duration-200 text-lg"
+            >
+              Learn More
+            </button>
+            <button
+              class="mt-4 px-8 py-3 bg-transparent border-2 border-BokashiC-400 text-BokashiC-400 font-body font-semibold rounded-lg cursor-not-allowed opacity-70 text-lg"
+              disabled
+            >
+              Disabled State
+            </button>
+          </div>
+
+          <!-- Tertiary/Outline Button -->
+          <div
+            class="p-6 bg-KlipphallC-100 dark:bg-PistageC-700 rounded-lg shadow-md flex flex-col items-center justify-center"
+          >
+            <p
+              class="font-body text-sm text-PistageC-600 dark:text-KlipphallC-300 mb-4"
+            >
+              Tertiary Button (Subtle)
+            </p>
+            <button
+              class="px-8 py-3 text-BokashiC-600 dark:text-BokashiC-400 font-body font-semibold rounded-lg hover:bg-BokashiC-50 dark:hover:bg-PistageC-600 focus:outline-none focus:ring-2 focus:ring-BokashiC-500 focus:ring-opacity-75 transition-all duration-200 text-lg"
+            >
+              View Details
+            </button>
+            <button
+              class="mt-4 px-8 py-3 text-BokashiC-400 dark:text-BokashiC-600 font-body font-semibold rounded-lg cursor-not-allowed opacity-70 text-lg"
+              disabled
+            >
+              Disabled State
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Form Elements -->
+      <section>
+        <h2
+          class="font-heading uppercase text-PistageC-800 dark:text-KlipphallC-50 text-3xl sm:text-3xl md:text-4xl lg:text-4xl xl:text-5xl mb-8"
+        >
+          Form Elements
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <!-- Input Field -->
+          <div
+            class="p-6 bg-KlipphallC-100 dark:bg-PistageC-700 rounded-lg shadow-md"
+          >
+            <p
+              class="font-body text-sm text-PistageC-600 dark:text-KlipphallC-300 mb-4"
+            >
+              Text Input
+            </p>
+            <input
+              type="text"
+              placeholder="Enter your name"
+              class="w-full p-3 border border-PistageC-300 dark:border-PistageC-600 bg-KlipphallC-50 dark:bg-PistageC-800 rounded-lg focus:ring-2 focus:ring-BokashiC-500 focus:border-transparent transition-all duration-200 text-PistageC-800 dark:text-KlipphallC-50 placeholder-PistageC-500 dark:placeholder-PistageC-400 text-lg"
+            />
+            <input
+              type="text"
+              placeholder="Disabled Input"
+              class="w-full p-3 mt-4 border border-PistageC-200 dark:border-PistageC-700 bg-KlipphallC-100 dark:bg-PistageC-700 rounded-lg cursor-not-allowed opacity-70 text-PistageC-500 dark:text-PistageC-400 text-lg"
+              disabled
+            />
+          </div>
+
+          <!-- Textarea -->
+          <div
+            class="p-6 bg-KlipphallC-100 dark:bg-PistageC-700 rounded-lg shadow-md"
+          >
+            <p
+              class="font-body text-sm text-PistageC-600 dark:text-KlipphallC-300 mb-4"
+            >
+              Textarea
+            </p>
+            <textarea
+              placeholder="Your message..."
+              rows="4"
+              class="w-full p-3 border border-PistageC-300 dark:border-PistageC-600 bg-KlipphallC-50 dark:bg-PistageC-800 rounded-lg focus:ring-2 focus:ring-BokashiC-500 focus:border-transparent transition-all duration-200 text-PistageC-800 dark:text-KlipphallC-50 placeholder-PistageC-500 dark:placeholder-PistageC-400 text-lg"
+            ></textarea>
+          </div>
+
+          <!-- Checkbox and Radio -->
+          <div
+            class="p-6 bg-KlipphallC-100 dark:bg-PistageC-700 rounded-lg shadow-md"
+          >
+            <p
+              class="font-body text-sm text-PistageC-600 dark:text-KlipphallC-300 mb-4"
+            >
+              Checkbox and Radio Buttons
+            </p>
+            <div class="flex items-center mb-2">
+              <input
+                type="checkbox"
+                id="checkbox1"
+                class="form-checkbox h-5 w-5 text-BokashiC-600 rounded focus:ring-BokashiC-500 transition-all duration-200"
+              />
+              <label
+                for="checkbox1"
+                class="ml-3 text-PistageC-800 dark:text-KlipphallC-50 font-body text-lg"
+                >Option One</label
+              >
+            </div>
+            <div class="flex items-center mb-2">
+              <input
+                type="radio"
+                id="radio1"
+                name="radio-group"
+                class="form-radio h-5 w-5 text-BokashiC-600 focus:ring-BokashiC-500 transition-all duration-200"
+              />
+              <label
+                for="radio1"
+                class="ml-3 text-PistageC-800 dark:text-KlipphallC-50 font-body text-lg"
+                >Radio Choice A</label
+              >
+            </div>
+            <div class="flex items-center">
+              <input
+                type="radio"
+                id="radio2"
+                name="radio-group"
+                class="form-radio h-5 w-5 text-BokashiC-600 focus:ring-BokashiC-500 transition-all duration-200"
+              />
+              <label
+                for="radio2"
+                class="ml-3 text-PistageC-800 dark:text-KlipphallC-50 font-body text-lg"
+                >Radio Choice B</label
+              >
+            </div>
+          </div>
+
+          <!-- Select Dropdown -->
+          <div
+            class="p-6 bg-KlipphallC-100 dark:bg-PistageC-700 rounded-lg shadow-md"
+          >
+            <p
+              class="font-body text-sm text-PistageC-600 dark:text-KlipphallC-300 mb-4"
+            >
+              Select Dropdown
+            </p>
+            <select
+              class="w-full p-3 border border-PistageC-300 dark:border-PistageC-600 bg-KlipphallC-50 dark:bg-PistageC-800 rounded-lg focus:ring-2 focus:ring-BokashiC-500 focus:border-transparent transition-all duration-200 text-PistageC-800 dark:text-KlipphallC-50 text-lg"
+            >
+              <option>Option 1</option>
+              <option>Option 2</option>
+              <option>Option 3</option>
+            </select>
+          </div>
+        </div>
+      </section>
+
+      <!-- Cards -->
+      <section>
+        <h2
+          class="font-heading uppercase text-PistageC-800 dark:text-KlipphallC-50 text-3xl sm:text-3xl md:text-4xl lg:text-4xl xl:text-5xl mb-8"
+        >
+          Card Examples
+        </h2>
+
+        <div class="grid grid-cols-card gap-8">
+          <!-- Basic Card -->
+          <div
+            class="bg-KlipphallC-100 dark:bg-PistageC-700 rounded-xl shadow-lg p-6 flex flex-col items-start"
+          >
+            <h3
+              class="font-subheading text-PistageC-800 dark:text-KlipphallC-50 text-xl md:text-2xl mb-3"
+            >
+              Basic Card Title
+            </h3>
+            <p
+              class="font-body text-PistageC-700 dark:text-KlipphallC-200 text-base mb-4 flex-grow"
+            >
+              This is a simple card structure, ideal for displaying brief pieces
+              of content or summaries.
+            </p>
+            <button
+              class="mt-auto px-6 py-2 bg-BokashiC-600 text-KlipphallC-50 font-body font-semibold rounded-lg hover:bg-BokashiC-700 transition-colors duration-200"
+            >
+              Action
+            </button>
+          </div>
+
+          <!-- Card with Image -->
+          <div
+            class="bg-KlipphallC-100 dark:bg-PistageC-700 rounded-xl shadow-lg overflow-hidden"
+          >
+            <img
+              src="https://via.placeholder.com/400x200/BokashiC-300/BokashiC-800?text=Card+Image"
+              alt="Card Image"
+              class="w-full h-48 object-cover"
+            />
+            <div class="p-6">
+              <h3
+                class="font-subheading text-PistageC-800 dark:text-KlipphallC-50 text-xl md:text-2xl mb-3"
+              >
+                Image Card Title
+              </h3>
+              <p
+                class="font-body text-PistageC-700 dark:text-KlipphallC-200 text-base mb-4"
+              >
+                A card featuring an image at the top, perfect for articles or
+                product displays.
+              </p>
+              <a
+                href="#"
+                class="text-BokashiC-600 dark:text-BokashiC-400 hover:underline font-semibold"
+                >Read More</a
+              >
+            </div>
+          </div>
+
+          <!-- Card with Accent Border -->
+          <div
+            class="bg-KlipphallC-100 dark:bg-PistageC-700 rounded-xl shadow-lg p-6 border-l-4 border-BokashiC-600 dark:border-BokashiC-400 flex flex-col items-start"
+          >
+            <h3
+              class="font-subheading text-PistageC-800 dark:text-KlipphallC-50 text-xl md:text-2xl mb-3"
+            >
+              Accent Card Title
+            </h3>
+            <p
+              class="font-body text-PistageC-700 dark:text-KlipphallC-200 text-base mb-4 flex-grow"
+            >
+              This card uses an accent border to highlight importance or a
+              category.
+            </p>
+            <button
+              class="mt-auto px-6 py-2 bg-transparent border-2 border-BokashiC-600 text-BokashiC-600 font-body font-semibold rounded-lg hover:bg-BokashiC-50 dark:hover:bg-PistageC-600 transition-colors duration-200"
+            >
+              View Info
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Navigation / Menu -->
+      <section>
+        <h2
+          class="font-heading uppercase text-PistageC-800 dark:text-KlipphallC-50 text-3xl sm:text-3xl md:text-4xl lg:text-4xl xl:text-5xl mb-8"
+        >
+          Navigation Examples
+        </h2>
+
+        <div class="grid grid-cols-1 gap-8">
+          <!-- Horizontal Navigation -->
+          <nav
+            class="bg-PistageC-100 dark:bg-PistageC-700 rounded-lg shadow-md p-4"
+          >
+            <p
+              class="font-body text-sm text-PistageC-600 dark:text-KlipphallC-300 mb-3"
+            >
+              Horizontal Navigation
+            </p>
+            <ul class="flex space-x-6 justify-center md:justify-start">
+              <li>
+                <a
+                  href="#"
+                  class="font-subheading text-PistageC-800 dark:text-KlipphallC-50 hover:text-BokashiC-600 dark:hover:text-BokashiC-400 transition-colors duration-200 text-lg"
+                  >Home</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="font-subheading text-PistageC-800 dark:text-KlipphallC-50 hover:text-BokashiC-600 dark:hover:text-BokashiC-400 transition-colors duration-200 text-lg"
+                  >About</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="font-subheading text-PistageC-800 dark:text-KlipphallC-50 hover:text-BokashiC-600 dark:hover:text-BokashiC-400 transition-colors duration-200 text-lg"
+                  >Services</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="font-subheading text-PistageC-800 dark:text-KlipphallC-50 hover:text-BokashiC-600 dark:hover:text-BokashiC-400 transition-colors duration-200 text-lg"
+                  >Contact</a
+                >
+              </li>
+            </ul>
+          </nav>
+
+          <!-- Vertical Navigation -->
+          <nav
+            class="bg-PistageC-100 dark:bg-PistageC-700 rounded-lg shadow-md p-4 w-64"
+          >
+            <p
+              class="font-body text-sm text-PistageC-600 dark:text-KlipphallC-300 mb-3"
+            >
+              Vertical Navigation
+            </p>
+            <ul class="space-y-2">
+              <li>
+                <a
+                  href="#"
+                  class="block p-2 rounded-md font-body text-PistageC-800 dark:text-KlipphallC-50 hover:bg-PistageC-200 dark:hover:bg-PistageC-600 transition-colors duration-200 text-lg"
+                  >Dashboard</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="block p-2 rounded-md font-body text-PistageC-800 dark:text-KlipphallC-50 hover:bg-PistageC-200 dark:hover:bg-PistageC-600 transition-colors duration-200 text-lg"
+                  >Settings</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="block p-2 rounded-md font-body text-PistageC-800 dark:text-KlipphallC-50 hover:bg-PistageC-200 dark:hover:bg-PistageC-600 transition-colors duration-200 text-lg"
+                  >Reports</a
+                >
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </section>
+
+      <!-- Color Palette Showcase -->
+      <section>
+        <h2
+          class="font-heading uppercase text-PistageC-800 dark:text-KlipphallC-50 text-3xl sm:text-3xl md:text-4xl lg:text-4xl xl:text-5xl mb-8"
+        >
+          Color Palette
+        </h2>
+
+        <div
+          class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6"
+        >
+          <div class="flex flex-col items-center">
+            <div
+              class="w-24 h-24 rounded-full bg-KlipphallC-50 border border-PistageC-300 dark:border-PistageC-600 shadow-md"
+            ></div>
+            <p
+              class="font-body text-sm text-PistageC-700 dark:text-KlipphallC-200 mt-2"
+            >
+              KlipphallC-50
+            </p>
+          </div>
+          <div class="flex flex-col items-center">
+            <div class="w-24 h-24 rounded-full bg-PistageC-800 shadow-md"></div>
+            <p
+              class="font-body text-sm text-PistageC-700 dark:text-KlipphallC-200 mt-2"
+            >
+              PistageC-800
+            </p>
+          </div>
+          <div class="flex flex-col items-center">
+            <div class="w-24 h-24 rounded-full bg-BokashiC-600 shadow-md"></div>
+            <p
+              class="font-body text-sm text-PistageC-700 dark:text-KlipphallC-200 mt-2"
+            >
+              BokashiC-600
+            </p>
+          </div>
+          <div class="flex flex-col items-center">
+            <div class="w-24 h-24 rounded-full bg-PistageC-600 shadow-md"></div>
+            <p
+              class="font-body text-sm text-PistageC-700 dark:text-KlipphallC-200 mt-2"
+            >
+              PistageC-600
+            </p>
+          </div>
+          <div class="flex flex-col items-center">
+            <div class="w-24 h-24 rounded-full bg-BokashiC-400 shadow-md"></div>
+            <p
+              class="font-body text-sm text-PistageC-700 dark:text-KlipphallC-200 mt-2"
+            >
+              BokashiC-400
+            </p>
+          </div>
+          <!-- Add more colors as needed based on your theme -->
+        </div>
+      </section>
+
+      <!-- Utility Showcase (Shadows, Borders, etc.) -->
+      <section>
+        <h2
+          class="font-heading uppercase text-PistageC-800 dark:text-KlipphallC-50 text-3xl sm:text-3xl md:text-4xl lg:text-4xl xl:text-5xl mb-8"
+        >
+          Utility Elements
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <!-- Shadows -->
+          <div
+            class="p-6 bg-KlipphallC-100 dark:bg-PistageC-700 rounded-lg shadow-md"
+          >
+            <p
+              class="font-body text-sm text-PistageC-600 dark:text-KlipphallC-300 mb-4"
+            >
+              Shadow Examples
+            </p>
+            <div class="flex flex-wrap gap-6 justify-center">
+              <div
+                class="w-28 h-28 bg-KlipphallC-50 dark:bg-PistageC-800 rounded-lg shadow-sm flex items-center justify-center text-sm"
+              >
+                sm
+              </div>
+              <div
+                class="w-28 h-28 bg-KlipphallC-50 dark:bg-PistageC-800 rounded-lg shadow-md flex items-center justify-center text-sm"
+              >
+                md
+              </div>
+              <div
+                class="w-28 h-28 bg-KlipphallC-50 dark:bg-PistageC-800 rounded-lg shadow-lg flex items-center justify-center text-sm"
+              >
+                lg
+              </div>
+              <div
+                class="w-28 h-28 bg-KlipphallC-50 dark:bg-PistageC-800 rounded-lg shadow-xl flex items-center justify-center text-sm"
+              >
+                xl
+              </div>
+            </div>
+          </div>
+
+          <!-- Borders -->
+          <div
+            class="p-6 bg-KlipphallC-100 dark:bg-PistageC-700 rounded-lg shadow-md"
+          >
+            <p
+              class="font-body text-sm text-PistageC-600 dark:text-KlipphallC-300 mb-4"
+            >
+              Border Examples
+            </p>
+            <div class="flex flex-wrap gap-6 justify-center">
+              <div
+                class="w-28 h-28 bg-KlipphallC-50 dark:bg-PistageC-800 rounded-lg border border-PistageC-300 dark:border-PistageC-600 flex items-center justify-center text-sm"
+              >
+                default
+              </div>
+              <div
+                class="w-28 h-28 bg-KlipphallC-50 dark:bg-PistageC-800 rounded-lg border-2 border-BokashiC-600 dark:border-BokashiC-400 flex items-center justify-center text-sm"
+              >
+                accent
+              </div>
+              <div
+                class="w-28 h-28 bg-KlipphallC-50 dark:bg-PistageC-800 rounded-full border-4 border-PistageC-400 dark:border-PistageC-500 flex items-center justify-center text-sm"
+              >
+                rounded
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <footer
+        class="text-center py-10 text-PistageC-600 dark:text-KlipphallC-300 text-sm"
+      >
+        <p>&copy; 2023 Your Design. All rights reserved.</p>
+      </footer>
+    </div>
+  </body>
+</html>

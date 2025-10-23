@@ -1,0 +1,99 @@
+@import "tailwindcss";
+
+
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('/fonts/montserrat-100 900.woff2') format('woff2');
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: url('/fonts/inter-100 900.woff2') format('woff2');
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+.font-heading {
+
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+
+}
+
+.font-subheading {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.font-body {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    letter-spacing: 0.02em;
+
+}
+
+
+
+
+@theme{
+    --color-Red: #FF282C;
+    --color-RedHover: #CC2024;
+    --color-AccentR-50: #feebeb;   /* Ljusaste, för lätt bakgrund */
+    --color-AccentR-100: #fecaca; 
+    --color-AccentR-200: #fca5a5; 
+    --color-AccentR-300: #f87171; 
+    --color-AccentR-400: #ef4444; 
+    --color-AccentR-500: #d51d1f;   /* Nära din ursprungliga röd */
+    --color-AccentR-600: #c01c1f; 
+    --color-AccentR-700: #9f1719; 
+    --color-AccentR-800: #841416;   /* Nära din RedHover */
+    --color-AccentR-900: #711214; 
+    --color-AccentR-950: #3b090a;
+    --color-Black: #000;
+    --color-White: #FFF;
+    --color-WhiteHover: #FFF;
+    --color-Gray-100: #F3F4F6;
+    --color-Gray-400: #9CA3AF;
+    --color-Gray-700: #374151;
+    --color-PistageC-50: #f5f6f4;
+    --color-PistageC-100: #e8eae6;
+    --color-PistageC-200: #d4d8cf;
+    --color-PistageC-300: #bdc4b6;
+    --color-PistageC-400: #a8b19f;
+    --color-PistageC-500: #8c9880;
+    --color-PistageC-600: #707c65;
+    --color-PistageC-700: #545d4b;
+    --color-PistageC-800: #383e32;
+    --color-PistageC-900: #1c1f19;
+    --color-PistageC-950: #0d0e0b;
+    --color-KlipphallC-50: #f7f5f3;
+    --color-KlipphallC-100: #efebe6;
+    --color-KlipphallC-200: #dfd8ce;
+    --color-KlipphallC-300: #cfc4b5;
+    --color-KlipphallC-400: #b9a993;
+    --color-KlipphallC-500: #a38e71;
+    --color-KlipphallC-600: #857156;
+    --color-KlipphallC-700: #665742;
+    --color-KlipphallC-800: #443a2c;
+    --color-KlipphallC-900: #221d16;
+    --color-KlipphallC-950: #0f0d0a;
+    --color-BokashiC-50: #f7f6ee;
+    --color-BokashiC-100: #eeeddd;
+    --color-BokashiC-200: #dcdab7;
+    --color-BokashiC-300: #cbc895;
+    --color-BokashiC-400: #b8b570;
+    --color-BokashiC-500: #a4a051;
+    --color-BokashiC-600: #827f40;
+    --color-BokashiC-700: #5d5b2e;
+    --color-BokashiC-800: #3d3c1e;
+    --color-BokashiC-900: #1f1e0f;
+    --color-BokashiC-950: #111108;
+}
