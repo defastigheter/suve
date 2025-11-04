@@ -3,127 +3,134 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Daikin ECH20 Värmepumpsberedare</title>
-
+  <title>Elektronikkylare LKD</title>
   <link href="src/output.css" rel="stylesheet" />
   <style>
-      .spec-table th, .spec-table td {
-          padding: 0.75rem;
-          text-align: left;
-      }
-      .spec-table th {
-          width: 50%;
-          font-weight: 600;
-          color: #1f2937;
-      }
-      .spec-table tr:nth-child(odd) {
-          background-color: #f3f4f6;
-      }
+    /* Specifikationstabell */
+    .spec-table th, .spec-table td {
+      padding: 0.75rem;
+      text-align: left;
+    }
+    .spec-table th {
+      width: 50%;
+      font-weight: 600;
+      color: #1f2937;
+    }
+    .spec-table tr:nth-child(odd) {
+      background-color: #f3f4f6;
+    }
 
-      /* Karusell-stil */
-      .carousel {
-        position: relative;
-        width: 100%;
-        overflow: hidden;
-      }
-      .carousel-inner {
-        display: flex;
-        transition: transform 0.5s ease-in-out;
-      }
-      .carousel-inner img {
-        width: 100%;
-        flex-shrink: 0;
-        object-fit: cover;
-      }
-      .carousel-buttons {
-        position: absolute;
-        top: 50%;
-        width: 100%;
-        display: flex;
-        justify-content: space-between;
-        transform: translateY(-50%);
-        padding: 0 1rem;
-      }
-      .carousel-buttons button {
-        background: rgba(0,0,0,0.5);
-        color: white;
-        border: none;
-        padding: 0.5rem 1rem;
-        cursor: pointer;
-        font-size: 1.5rem;
-        border-radius: 0.25rem;
-      }
+    /* Karusell */
+    .carousel {
+      position: relative;
+      width: 100%;
+      max-width: 900px;
+      margin: auto;
+      overflow: hidden;
+      border-radius: 1rem;
+    }
+
+    .carousel-inner {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+    }
+
+    .carousel-inner img {
+      width: 100%;
+      height: 650px;
+      object-fit: cover;
+      flex-shrink: 0;
+    }
+
+    .carousel-buttons {
+      position: absolute;
+      top: 50%;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      transform: translateY(-50%);
+      padding: 0 1rem;
+    }
+
+    .carousel-buttons button {
+      background: rgba(0,0,0,0.5);
+      color: white;
+      border: none;
+      padding: 0.5rem 1rem;
+      cursor: pointer;
+      font-size: 2rem;
+      border-radius: 0.25rem;
+	}
   </style>
 </head>
-
 <body class="bg-white text-gray-900 font-body">
-  
+
   <header class="bg-white shadow-md py-4 px-4 sticky top-0 z-50">
-      <div class="container mx-auto flex items-center justify-start"> 
-          <a href="index.html" class="flex items-center space-x-2">
-              <img src="Image/Logo Suve.png" alt="Logo" class="w-28 object-cover" />
-          </a>
-      </div>
+    <div class="container mx-auto flex items-center justify-start">
+      <a href="index.html" class="flex items-center space-x-2">
+        <img src="Image/Logo Suve.png" alt="Logo" class="w-28 object-cover" />
+      </a>
+    </div>
   </header>
-  
+
+  <!-- HERO SECTION MED KARUSELL -->
   <section class="py-16 md:py-20 bg-gray-50">
-      <div class="container mx-auto px-4">
-          
-          <div class="flex justify-center mb-12">
-              <a href="varmepumpar.html" 
-                 class="inline-flex items-center px-6 py-2 bg-AccentR-500 text-white font-body font-semibold rounded-lg shadow-md hover:bg-AccentR-800 transition-all duration-200"
-              >
-                  <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
-                  </svg>
-                  Tillbaka till Värmepumpar
-              </a>
-          </div>
+    <div class="container mx-auto px-4 text-center">
 
-          <div class="text-center max-w-4xl mx-auto mb-12">
-              <h1 class="font-heading uppercase text-gray-900 text-5xl sm:text-6xl mb-4">
-                  DAIKIN ECH20 VÄRMEPUMPSBEREDARE
-              </h1>
-              <p class="font-subheading text-gray-700 text-xl md:text-2xl max-w-3xl mx-auto">
-                  Effektiv och hygienisk varmvattenproduktion för ditt Daikin värmesystem.
-              </p>
-          </div>
-      </div>
-  </section>
+      <h1 class="font-heading uppercase text-gray-900 text-5xl sm:text-6xl mb-4">
+        Elektronikkylare LKD
+      </h1>
+      <p class="font-subheading text-gray-700 text-xl md:text-2xl max-w-3xl mx-auto mb-12">
+        Specialtillverkad mobil kylaggregat för extern kylning av F-16 stridsflygplan för krävande förhållanden.
+      </p>
 
-  <!-- Karusell -->
-  <section class="py-16">
-    <div class="container mx-auto px-4 max-w-6xl">
-      <div class="carousel mb-12">
-        <div class="carousel-inner" id="carouselInner">
-          <img src="Image/IMG_LKD_1.JPG" alt="ECH20 Bild 1">
-          <img src="Image/IMG_LKD_2.JPG" alt="ECH20 Bild 2">
-          <img src="Image/IMG_LKD_3.JPG" alt="ECH20 Bild 3">
-          <img src="Image/IMG_LKD_4.JPG" alt="ECH20 Bild 4">
-          <img src="Image/IMG_LKD_5.JPG" alt="ECH20 Bild 5">
+	  <div class="flex justify-center mb-12">
+                <a href="index.html" 
+                    class="inline-flex items-center 
+                        px-6 py-2 
+                        bg-AccentR-500 text-white 
+                        font-body font-semibold rounded-lg shadow-md 
+                        hover:bg-AccentR-800 focus:outline-none transition-all duration-200" 
+                        
+                        >
+                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
+                    Tillbaka till Startsidan
+                </a>
+            </div>
+
+      <div class="carousel">
+        <div class="carousel-inner">
+          <img src="Image/IMG_LKD_1.JPG">
+          <img src="Image/IMG_LKD_2.JPG">
+          <img src="Image/IMG_LKD_3.JPG">
+          <img src="Image/IMG_LKD_4.JPG">
+          <img src="Image/IMG_LKD_5.JPG">
         </div>
         <div class="carousel-buttons">
-          <button id="prev">&lt;</button>
-          <button id="next">&gt;</button>
+          <button id="prev">&#10094;</button>
+          <button id="next">&#10095;</button>
         </div>
       </div>
+    </div>
+  </section>
 
-      <!-- Specifikationer -->
-      <div class="bg-white border border-gray-200 rounded-xl shadow-xl p-6 md:p-10">
-        <h3 class="font-heading text-2xl text-AccentR-500 mb-6">Tekniska Specifikationer</h3>
-        <table class="spec-table w-full border border-gray-300 rounded-lg overflow-hidden">
-          <tbody>
-            <tr><th>Kapaciteter / tankstorlekar</th><td>300 L / 500 L</td></tr>
-            <tr><th>Köldmedium</th><td>R32</td></tr>
-            <tr><th>Max varmvattentemperatur</th><td>65 °C</td></tr>
-            <tr><th>Drift vid utomhustemperatur</th><td>ner till -25 °C</td></tr>
-            <tr><th>Energiklass</th><td>A+++</td></tr>
-            <tr><th>Dimensioner (exempel)</th><td>1892 × 594 × 644 mm</td></tr>
-            <tr><th>Hygien</th><td>Fresh water on demand – minimal lagrad volym</td></tr>
-          </tbody>
-        </table>
-        <a href="Productsheets/Daikin_ECH20.pdf" class="mt-6 inline-block text-AccentR-500 font-semibold hover:underline">Se komplett produktblad &rarr;</a>
-      </div>
+  <!-- SPECIFIKATIONER -->
+  <section class="py-16">
+    <div class="container mx-auto px-4 max-w-4xl">
+      <h2 class="font-heading text-3xl text-AccentR-500 mb-6">Tekniska Specifikationer</h2>
+      <table class="spec-table w-full border border-gray-300 rounded-lg overflow-hidden">
+        <tbody>
+          <tr><th>Kyleffekt</th><td>- kW</td></tr>
+          <tr><th>Värmeeffekt</th><td>- kW</td></tr>
+          <tr><th>Temperaturområden</th><td>Från 50 °C ner till -45 °C</td></tr>
+          <tr><th>Luftkapacitet</th><td>- m^3/min</td></tr>
+          <tr><th>Köldmedium</th><td>R 134a</td></tr>
+          <tr><th>Vikt</th><td>- kg</td></tr>
+		  <tr><th>Mått (LxBxH)</th><td> x mm y mm z mm</td></tr>
+		  <tr><th>Drivmedel</th><td>Diesel</td></tr>
+        </tbody>
+      </table>
+      <a href="Productsheets/Daikin_ECH20.pdf" class="mt-6 inline-block text-AccentR-500 font-semibold hover:underline">Se komplett produktblad &rarr;</a>
     </div>
   </section>
 
@@ -141,16 +148,18 @@
     </div>
   </footer>
 
+  <!-- JavaScript för karusell -->
   <script>
-    const carouselInner = document.getElementById('carouselInner');
-    const images = carouselInner.querySelectorAll('img');
+    const carouselInner = document.querySelector('.carousel-inner');
+    const images = document.querySelectorAll('.carousel-inner img');
     const prevBtn = document.getElementById('prev');
     const nextBtn = document.getElementById('next');
+
     let index = 0;
 
     function showSlide(i) {
-      if(i < 0) index = images.length - 1;
-      else if(i >= images.length) index = 0;
+      if (i < 0) index = images.length - 1;
+      else if (i >= images.length) index = 0;
       else index = i;
       carouselInner.style.transform = `translateX(-${index * 100}%)`;
     }
@@ -158,9 +167,7 @@
     prevBtn.addEventListener('click', () => showSlide(index - 1));
     nextBtn.addEventListener('click', () => showSlide(index + 1));
 
-    // Automatisk rotation
-    setInterval(() => showSlide(index + 1), 8000);
+    showSlide(index);
   </script>
-
 </body>
 </html>
