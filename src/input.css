@@ -2,6 +2,8 @@
 
 
 
+
+
 @font-face {
     font-family: 'Montserrat';
     src: url('/fonts/montserrat-100 900.woff2') format('woff2');
@@ -41,8 +43,39 @@
 }
 
 
+/*
+
+@font-face {
+    font-family: 'Lato';
+    src: url('fonts/Lato-Light.woff2') format('woff2');
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
+}
 
 
+.font-heading {
+
+    font-family: 'Lato', sans-serif;
+    font-weight: 900;
+
+}
+
+.font-subheading {
+    font-family: 'Lato', sans-serif;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.font-body {
+    font-family: 'Lato', sans-serif;
+    font-weight: 900;
+    letter-spacing: 0.02em;
+
+}
+
+*/
 @theme{
     --color-Red: #FF282C;
     --color-RedHover: #CC2024;
