@@ -701,6 +701,9 @@
   .p-8 {
     padding: calc(var(--spacing) * 8);
   }
+  .px-1 {
+    padding-inline: calc(var(--spacing) * 1);
+  }
   .px-2 {
     padding-inline: calc(var(--spacing) * 2);
   }
@@ -724,6 +727,12 @@
   }
   .px-14 {
     padding-inline: calc(var(--spacing) * 14);
+  }
+  .px-15 {
+    padding-inline: calc(var(--spacing) * 15);
+  }
+  .px-16 {
+    padding-inline: calc(var(--spacing) * 16);
   }
   .py-1 {
     padding-block: calc(var(--spacing) * 1);
