@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Suve Energy Products AB</title>
+    <title>Suve Energiprodukter AB</title>
     <link href="src/output.css" rel="stylesheet" />
   </head>
 
@@ -107,8 +107,8 @@
       </div>
 
       <div class="absolute inset-0 flex flex-col items-center justify-center text-center p-8 z-20">
-        <h1 class="font-heading uppercase text-white text-5xl sm:text-6xl md:text-7xl mb-4">
-          Suve AB
+        <h1 class="font-heading uppercase text-white text-3xl sm:text-4xl md:text-5xl mb-4">
+          Suve Energiprodukter AB
         </h1>
         <p class="font-subheading text-gray-200 text-xl md:text-2xl mb-8 max-w-2xl">
           Your supplier of customized energy products.
@@ -303,21 +303,9 @@
             </div>
           </div>
 
-          <div class="bg-Gray-100 rounded-xl shadow-lg p-8 h-full">
-            <iframe
-              src="https://forms.microsoft.com/Pages/ResponsePage.aspx?id=Z3EzYWv8l0Oh0wrsnckNZ-a22Sah3IlOvRSQSi9oJBtUOVhJVDdBWkJaSVlTN0JFUkRGTFVLWks1Vy4u"
-              width="100%"
-              height="600"
-              frameborder="0"
-              marginheight="0"
-              marginwidth="0"
-              class="rounded-lg"
-              style="border: none;"
-              allowfullscreen
-            >
-              Laddar formuläret…
-          </iframe>
-            </div>
+          <div id="form-container" class="bg-Gray-100 rounded-xl shadow-lg p-8 h-[650px] flex items-center justify-center cursor-pointer text-center">
+            <p>Click here to contact us.</p>
+          </div>
           </div>
 
           <div class="pt-6">
@@ -390,6 +378,26 @@
           navToggle.item(i).classList.toggle("hidden");
         }
       };
+    </script>
+    <script>
+      const container = document.getElementById("form-container");
+    
+      container.addEventListener("click", function() {
+        // Skapa iframe
+        const iframe = document.createElement("iframe");
+        iframe.src = "https://forms.microsoft.com/Pages/ResponsePage.aspx?id=Z3EzYWv8l0Oh0wrsnckNZ-a22Sah3IlOvRSQSi9oJBtUOVhJVDdBWkJaSVlTN0JFUkRGTFVLWks1Vy4u";
+        iframe.width = "100%";
+        iframe.height = "100%";
+        iframe.frameBorder = "0";
+        iframe.marginHeight = "0";
+        iframe.marginWidth = "0";
+        iframe.className = "rounded-lg";
+        iframe.allowFullscreen = true;
+    
+        // Rensa container och lägg till iframe
+        container.innerHTML = "";
+        container.appendChild(iframe);
+      });
     </script>
 
   </body>

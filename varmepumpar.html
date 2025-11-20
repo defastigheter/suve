@@ -132,20 +132,8 @@
           </div>
       
           <!-- Formulärkort -->
-          <div class="bg-white border border-gray-200 rounded-xl shadow-lg overflow-hidden p-6">
-            <iframe
-              src="https://forms.office.com/Pages/ResponsePage.aspx?id=Z3EzYWv8l0Oh0wrsnckNZ-a22Sah3IlOvRSQSi9oJBtURVlJNFFBQ0UyNTNKQjlFVU1DVjhBV1JKQi4u"
-              width="100%"
-              height="600"
-              frameborder="0"
-              marginheight="0"
-              marginwidth="0"
-              class="rounded-lg"
-              style="border: none;"
-              allowfullscreen
-            >
-              Laddar formuläret…
-            </iframe>
+          <div id="form-container" class="bg-white border border-gray-200 rounded-xl shadow-lg overflow-hidden p-6 h-[650px] flex items-center justify-center cursor-pointer text-center">
+            <p class="text-gray-700">Klicka här för att ladda kontaktformuläret</p>
           </div>
         </div>
       </section>
@@ -181,5 +169,23 @@
       </div>
     </footer>
 
+    <script>
+      const container = document.getElementById("form-container");
+    
+      container.addEventListener("click", function() {
+        const iframe = document.createElement("iframe");
+        iframe.src = "https://forms.office.com/Pages/ResponsePage.aspx?id=Z3EzYWv8l0Oh0wrsnckNZ-a22Sah3IlOvRSQSi9oJBtURVlJNFFBQ0UyNTNKQjlFVU1DVjhBV1JKQi4u";
+        iframe.width = "100%";
+        iframe.height = "100%";
+        iframe.frameBorder = "0";
+        iframe.marginHeight = "0";
+        iframe.marginWidth = "0";
+        iframe.className = "rounded-lg";
+        iframe.allowFullscreen = true;
+    
+        container.innerHTML = "";
+        container.appendChild(iframe);
+      });
+    </script>
     </body>
 </html>

@@ -380,6 +380,9 @@
   .h-\[400px\] {
     height: 400px;
   }
+  .h-\[650px\] {
+    height: 650px;
+  }
   .h-auto {
     height: auto;
   }
@@ -448,6 +451,9 @@
   }
   .cursor-not-allowed {
     cursor: not-allowed;
+  }
+  .cursor-pointer {
+    cursor: pointer;
   }
   .resize {
     resize: both;

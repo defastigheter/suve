@@ -307,7 +307,7 @@ git push -f origin main
             Kontakta Oss
           </h2>
           <p class="mt-3 text-lg text-Black  max-w-2xl mx-auto">
-            Vi ser fram emot att höra från dig. Skicka gärna ett mail eller ring oss så återkopplar vi så snart vi kan.
+            Vi ser fram emot att höra från dig. Fyll gärna i kontaktformuläret eller ring oss så återkopplar vi så snart vi kan.
           </p>
         </div>
     
@@ -348,21 +348,11 @@ git push -f origin main
           </div>
     
 
-          <div class="bg-Gray-100 rounded-xl shadow-lg p-8 h-full flex flex-col flex-grow">
-            <iframe
-              src="https://forms.microsoft.com/Pages/ResponsePage.aspx?id=Z3EzYWv8l0Oh0wrsnckNZ-a22Sah3IlOvRSQSi9oJBtURTg4NTdZUTVTM1RJR01USjVVWkpYNlJRNS4u"
-              width="100%"
-              height="600"
-              frameborder="0"
-              marginheight="0"
-              marginwidth="0"
-              class="rounded-lg"
-              style="border: none;"
-              allowfullscreen
-            >
-              Laddar formuläret…
-          </iframe>
+          
+            <div id="form-container" class="bg-Gray-100 rounded-xl shadow-lg p-8 h-[650px] flex items-center justify-center cursor-pointer text-center">
+              <p>Klicka här för att ladda kontaktformuläret</p>
             </div>
+            
           </div>
 
           <!-- Ring oss-knapp -->
@@ -470,18 +460,30 @@ git push -f origin main
         }
       };
     </script>
+    <script>
+      const container = document.getElementById("form-container");
+    
+      container.addEventListener("click", function() {
+        // Skapa iframe
+        const iframe = document.createElement("iframe");
+        iframe.src = "https://forms.microsoft.com/Pages/ResponsePage.aspx?id=Z3EzYWv8l0Oh0wrsnckNZ-a22Sah3IlOvRSQSi9oJBtURTg4NTdZUTVTM1RJR01USjVVWkpYNlJRNS4u";
+        iframe.width = "100%";
+        iframe.height = "100%";
+        iframe.frameBorder = "0";
+        iframe.marginHeight = "0";
+        iframe.marginWidth = "0";
+        iframe.className = "rounded-lg";
+        iframe.allowFullscreen = true;
+    
+        // Rensa container och lägg till iframe
+        container.innerHTML = "";
+        container.appendChild(iframe);
+      });
+    </script>
+    
+
+ 
   
-
-<script>
-  // Tvinga sidan att alltid starta högst upp
-  window.history.scrollRestoration = "manual";
-
-  window.addEventListener("load", () => {
-    setTimeout(() => {
-      window.scrollTo(0, 0);
-    }, 50);
-  });
-</script>
 
   </body>
 </html>
