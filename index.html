@@ -470,10 +470,16 @@ git push -f origin main
         }
       };
     </script>
+  
 
 <script>
+  // Tvinga sidan att alltid starta högst upp
+  window.history.scrollRestoration = "manual";
+
   window.addEventListener("load", () => {
-    window.scrollTo(0, 0);
+    setTimeout(() => {
+      window.scrollTo(0, 0);
+    }, 50);
   });
 </script>
 
