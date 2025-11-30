@@ -31,6 +31,119 @@ git push -f origin main
 <link rel="manifest" href="/site.webmanifest" />
 
     <link href="src/output.css" rel="stylesheet" />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": ["LocalBusiness", "Store", "BuildingMaterialsStore"],
+        "name": "Suve Energiprodukter AB",
+        "description": "Suve Energiprodukter AB är din lokala expert på specialanpassade energiprodukter och klimatlösningar, med lång erfarenhet av driftsäkra och kundanpassade lösningar i Norrland och övriga Sverige.",
+        "url": "https://www.suve.se/",
+        "telephone": "+4666361720",
+        "email": "info@suve.se",
+        "image": [
+          "https://www.suve.se/Image/Logo Suve.png",
+          "https://www.suve.se/Image/IMG_Homepage_2.jpg"
+        ],
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Brovägen 7",
+          "addressLocality": "Husum",
+          "postalCode": "896 31",
+          "addressCountry": "SE"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": "63.33672",
+          "longitude": "19.16631"
+        },
+        "hasMap": "https://www.google.com/maps/search/?api=1&query=Brovägen+7+89631+Husum",
+        "openingHoursSpecification": [
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+            "opens": "08:00",
+            "closes": "16:00",
+            "description": "Kontor och kundservice är öppet vardagar. Kontakt via telefon eller e-post rekommenderas."
+          }
+        ],
+        "paymentAccepted": ["Invoice"],
+        "currenciesAccepted": "SEK",
+        "areaServed": [
+          {"@type": "Place","name": "Husum"},
+          {"@type": "AdministrativeArea","name": "Västernorrlands län"},
+          {"@type": "Country","name": "Sverige"}
+        ],
+        "founder": {
+          "@type": "Person",
+          "name": "Suve Energiprodukter AB",
+          "jobTitle": "Grundare & Ägare"
+        },
+        "sameAs": [
+          "https://www.instagram.com/SuveEnergiprodukter",
+          
+        ],
+        "keywords": "värmepumpar, klimatlösningar, energieffektiva system, Husum, Västernorrland, specialanpassade energiprodukter",
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Produktkatalog",
+          "itemListElement": [
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Product",
+                "name": "Läcksökningsutrustning",
+                "description": "Läcksökningsutrustning lämpare sig för olika användningsområden, inklusive läckagekontroll av lykthus och bränsletankar.",
+                "url": "https://www.suve.se/lacksokningsutrustning.html",
+                "image": "https://www.suve.se/Image/IMG_LACKSOKNING.png"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Product",
+                "name": "Linspel",
+                "description": "Driftsäkra linspel för industriella applikationer, från lyft till drag.",
+                "url": "https://www.suve.se/linspel.html",
+                "image": "https://www.suve.se/Image/IMG_LINSPEL_02.png"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Product",
+                "name": "Klimataggregat RBV",
+                "description": "Klimataggregat RBV för klimatreglering av förarhytterna på Roslagsbanan.",
+                "url": "https://www.suve.se/rbv.html",
+                "image": "https://www.suve.se/Image/IMG_RBV_1.png"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Product",
+                "name": "Elektronikkylare LKD",
+                "description": "Mobil kylanläggning optimerad för stridsflygplanet F16, säkerställer stabil kylning av elektronik.",
+                "url": "https://www.suve.se/lkd.html",
+                "image": "https://www.suve.se/Image/IMG_LKD.JPG"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Product",
+                "name": "Värmepumpar",
+                "description": "Energieffektiva värmepumpar från Daikin, luft/luft, luft/vatten och bergvärme, anpassade för nordiskt klimat.",
+                "url": "https://www.suve.se/varmepumpar.html",
+                "image": "https://www.suve.se/Image/IMG_Daikin_Logo.png"
+              }
+            }
+          ]
+        }
+      }
+      </script>
+      
+
   </head>
 
   <body class="bg-gray-50 text-Black font-body">
@@ -135,9 +248,7 @@ git push -f origin main
 
   <!-- Text-overlay -->
   <div class="absolute inset-0 flex flex-col items-center justify-center text-center p-8 z-20">
-    <h1 class="font-heading uppercase text-white text-3xl sm:text-4xl md:text-5xl mb-4">
-      Suve Energiprodukter AB
-    </h1>
+   
     <p class="font-subheading text-gray-200 text-xl md:text-2xl mb-8 max-w-2xl">
       Din leverantör av specialanpassade energiprodukter!
     </p>
@@ -172,16 +283,21 @@ git push -f origin main
 
     <!-- VÅRA PRODUKTER SECTION -->
 
-<section class="py-20" id="produkter">
-  <div class="container mx-auto px-4">
-    <h2
-      class="font-heading uppercase text-Black text-4xl sm:text-5xl mb-12 text-center"
-    >
-      Våra Produkter
-    </h2>
+    <section class="py-16">
+      <div class="container mx-auto px-4">
+        <h2
+          class="font-heading uppercase text-Black text-4xl sm:text-5xl mb-0 text-center"
+        >
+          Våra Produkter
+        </h2> 
+      </div>
+    </section>   
 
+<section class="py-10" id="produkter">
+  <div class="container mx-auto px-4">
+  
     <!-- De fyra produktblocken med bild överst -->
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-10" id="produkt-grid">
       
       <a href="lacksokningsutrustning.html">
         <div
@@ -265,8 +381,8 @@ git push -f origin main
     </div>
 
     <!-- Värmepumpar ligger under de fyra blocken -->
-    <div class="grid grid-cols-1 gap-10 mt-10">
-      <a href="varmepumpar.html">
+    <div class="grid grid-cols-1 gap-10 mt-10 mb-10" id="daikin-grid">
+      <a href="varmepumpar.html" id="daikin-block">
         <div
           class="bg-neutral-100 rounded-xl shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105 hover:shadow-xl h-full"
         >
@@ -511,6 +627,34 @@ git push -f origin main
     
       button.addEventListener('click', handleContactClick);
     </script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+      const daikin = document.getElementById("daikin-grid");
+      const produkter = document.getElementById("produkt-grid");
+      const parent = daikin.parentNode;
+  
+      function reorder() {
+          if (window.innerWidth < 768) {
+              // MOBIL: Daikin först
+              if (parent.firstElementChild !== daikin) {
+                  parent.insertBefore(daikin, parent.firstElementChild);
+              }
+          } else {
+              // DESKTOP: Produkterna först
+              if (parent.firstElementChild !== produkter) {
+                  parent.insertBefore(produkter, parent.firstElementChild);
+              }
+          }
+      }
+  
+      reorder(); // Kör när sidan laddas
+      window.addEventListener("resize", reorder); // Kör när fönstret ändras
+  });
+  </script>
+  
+  
+
 
  
   

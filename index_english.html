@@ -109,9 +109,7 @@
       </div>
 
       <div class="absolute inset-0 flex flex-col items-center justify-center text-center p-8 z-20">
-        <h1 class="font-heading uppercase text-white text-3xl sm:text-4xl md:text-5xl mb-4">
-          Suve Energiprodukter AB
-        </h1>
+  
         <p class="font-subheading text-gray-200 text-xl md:text-2xl mb-8 max-w-2xl">
           Your supplier of customized energy products.
         </p>
@@ -140,13 +138,20 @@
     </script>
 
     <!-- PRODUCTS SECTION -->
+
+    <section class="py-16" id="produkter">
+      <div class="container mx-auto px-4">
+        <h2
+          class="font-heading uppercase text-Black text-4xl sm:text-5xl mb-0 text-center"
+        >
+          Our Products
+        </h2> 
+      </div>
+    </section>
+
     <section class="py-20" id="produkter">
       <div class="container mx-auto px-4">
-        <h2 class="font-heading uppercase text-Black text-4xl sm:text-5xl mb-12 text-center">
-          Our Products
-        </h2>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-10" id="produkt-grid">
           
           <a href="lacksokningsutrustning_english.html">
             <div class="bg-neutral-100 rounded-xl shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105 hover:shadow-xl h-full flex flex-col">
@@ -221,7 +226,7 @@
           </a>
         </div>
 
-        <div class="grid grid-cols-1 gap-10 mt-10">
+        <div class="grid grid-cols-1 gap-10 mt-10 mb-10" id="daikin-grid">
           <a href="varmepumpar_english.html">
             <div class="bg-neutral-100 rounded-xl shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105 hover:shadow-xl h-full">
               <div class="p-8 flex flex-col sm:flex-row items-start sm:items-center">
@@ -417,5 +422,29 @@
       button.addEventListener('click', handleContactClick);
     </script>
 
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+      const daikin = document.getElementById("daikin-grid");
+      const produkter = document.getElementById("produkt-grid");
+      const parent = daikin.parentNode;
+  
+      function reorder() {
+          if (window.innerWidth < 768) {
+              // MOBIL: Daikin först
+              if (parent.firstElementChild !== daikin) {
+                  parent.insertBefore(daikin, parent.firstElementChild);
+              }
+          } else {
+              // DESKTOP: Produkterna först
+              if (parent.firstElementChild !== produkter) {
+                  parent.insertBefore(produkter, parent.firstElementChild);
+              }
+          }
+      }
+  
+      reorder(); // Kör när sidan laddas
+      window.addEventListener("resize", reorder); // Kör när fönstret ändras
+  });
+  </script>
   </body>
 </html>
