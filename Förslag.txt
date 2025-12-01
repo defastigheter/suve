@@ -1,0 +1,324 @@
+   <!-- START: Beräkningsverktyg för värmepumpar (lägg denna sektion ovanför offert-formuläret) -->
+<section id="calc-section" class="py-16 bg-white">
+  <div class="container mx-auto px-4 max-w-4xl">
+    <div class="text-center mb-8">
+      <h2 class="font-heading uppercase text-gray-900 text-3xl md:text-4xl mb-2">Räkna ut rekommenderad värmepump</h2>
+      <p class="text-gray-700">Fyll i uppgifterna om din fastighet så räknar vi fram ett ungefärligt effektbehov och föreslår lämpliga modeller från ert sortiment. OBS: Detta är bara en uppskattad beräkning som baseras på statistik och antaganden, verkliga faktorer kan spela roll och därför bör detta beräkningprogram ses som vägledning i valet av värmepump.</p>
+    </div>
+
+    <div class="bg-gray-50 border border-gray-200 rounded-xl shadow-lg p-6">
+      <form id="heatCalcForm" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <!-- Vänster kolumn -->
+        <div>
+          <label class="block text-sm font-medium text-gray-700">Geografisk placering</label>
+          <select id="zone" class="mt-1 block w-full rounded-md border-gray-300">
+            <option value="middle">Mellansverige (standard)</option>
+            <option value="north">Norrland (kallare)</option>
+            <option value="south">Södra Sverige (mildare)</option>
+          </select>
+
+          <label class="block text-sm font-medium text-gray-700 mt-4">Uppvärmd yta (kvm)</label>
+          <input id="area" type="number" min="10" step="1" value="100" class="mt-1 block w-full rounded-md border-gray-300" />
+
+          <label class="block text-sm font-medium text-gray-700 mt-4">Uppvärmd källare (kvm) — lämna 0 om ingen</label>
+          <input id="basement" type="number" min="0" step="1" value="0" class="mt-1 block w-full rounded-md border-gray-300" />
+
+          <label class="block text-sm font-medium text-gray-700 mt-4">Uppvärmd vind (kvm) — lämna 0 om ingen</label>
+          <input id="attic" type="number" min="0" step="1" value="0" class="mt-1 block w-full rounded-md border-gray-300" />
+        </div>
+
+        <!-- Höger kolumn -->
+        <div>
+          <label class="block text-sm font-medium text-gray-700">Fönstertyp</label>
+          <select id="windows" class="mt-1 block w-full rounded-md border-gray-300">
+            <option value="2">2-glas (standard)</option>
+            <option value="1">1-glas</option>
+            <option value="3">3-glas</option>
+          </select>
+
+          <label class="block text-sm font-medium text-gray-700 mt-4">Uppskattad isolering</label>
+          <select id="insulation" class="mt-1 block w-full rounded-md border-gray-300">
+            <option value="20-30">20-30 cm</option>
+            <option value="10-20">10-20 cm</option>
+            <option value="30-40">30-40 cm</option>
+            <option value="0-10">0-10 cm</option>
+          </select>
+
+          <label class="block text-sm font-medium text-gray-700 mt-4">Önskad värmepumpstyp</label>
+          <select id="desiredType" class="mt-1 block w-full rounded-md border-gray-300">
+            <option value="any">Visa alla / Öppna för förslag</option>
+            <option value="air-air">Luft/Luft</option>
+            <option value="air-water">Luft/Vatten</option>
+            <option value="geo">Berg-/Jordvärme</option>
+          </select>
+        </div>
+
+        <!-- Berekningsknappar över full width -->
+        <div class="md:col-span-2 flex items-center gap-3 mt-2">
+          <button id="calcBtn" type="button" class="px-6 py-2 bg-AccentR-500 text-white rounded-lg font-semibold hover:bg-AccentR-700">Beräkna</button>
+          <button id="resetBtn" type="button" class="px-4 py-2 border rounded-lg">Återställ</button>
+          <div id="calcHelp" class="text-sm text-gray-600 ml-auto">Antaganden: 60 W/m² grund (standard). Justeras efter zon, isolering & fönster.</div>
+        </div>
+      </form>
+
+      <!-- Resultat -->
+      <div id="resultCard" class="mt-6 p-4 border border-gray-200 rounded-lg hidden bg-white">
+        <h3 class="font-subheading text-xl text-gray-900 mb-2">Resultat</h3>
+        <p id="calcSummary" class="text-gray-700 mb-2"></p>
+        <p class="text-gray-700"><strong>Beräknat effektbehov:</strong> <span id="neededKW" class="text-AccentR-500 font-semibold"></span> kW</p>
+
+        <div id="recommendations" class="mt-4"></div>
+
+        <div class="mt-4 flex gap-3">
+          <button id="openContactFormBtn" class="px-4 py-2 border rounded-lg bg-neutral-400">Öppna offertformulär</button>
+          <a id="mailtoFallback" class="px-4 py-2 border rounded-lg hidden">Skicka via e-post</a>
+        </div>
+
+        <p class="mt-3 text-xs text-gray-500">OBS: Detta är bara en uppskattad beräkning som baseras på statistik och antaganden, verkliga faktorer kan spela roll och därför bör detta beräkningprogram ses som vägledning.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- END: Beräkningsverktyg -->
+
+<script>
+/* ========== Produktdatabas (baserat på dina sidor) ==========
+   Vi använder informationen du skickade. Varje produkt anger:
+   - id, title, type, minKW, maxKW (om relevant), nominalKW (typisk), url, image
+   Nominalvärden används för att jämföra mot beräknat behov.
+*/
+const PRODUCTS = [
+  // Luft/Luft (inomhusenheter representativa nominella kW)
+  {id:'stylish', title:'Daikin Stylish', type:'air-air', nominal:3.0, url:'luftluft.html', image:'Image/IMG_Daikin_Stylish.png'},
+  {id:'perfera', title:'Daikin Perfera', type:'air-air', nominal:3.2, url:'luftluft.html', image:'Image/IMG_Daikin_Perferera.png'},
+  {id:'comfora', title:'Daikin Comfora XTH', type:'air-air', nominal:3.2, url:'luftluft.html', image:'Image/IMG_Daikin_Comforta.png'},
+  {id:'perfera_golv', title:'Perfera Golv XTH', type:'air-air', nominal:3.2, url:'luftluft.html', image:'Image/IMG_Daikin_Perferera_golv.png'},
+  {id:'r_serien', title:'Daikin R-serien', type:'air-air', nominal:3.5, url:'luftluft.html', image:'Image/IMG_Daikin_R-serie.png'},
+  {id:'emura', title:'Daikin Emura', type:'air-air', nominal:5.2, url:'luftluft.html', image:'Image/IMG_Daikin_Emura.png'},
+
+  // Luft/Vatten
+  {id:'altherma_lt', title:'Altherma 3 LT', type:'air-water', min:3, max:6, nominal:4.5, url:'luftvatten.html', image:'Image/IMG_Daikin_Altherma_3_MT.png'},
+  {id:'altherma_top', title:'Altherma 3 Top Grade', type:'air-water', nominal:6.0, url:'luftvatten.html', image:'Image/IMG_Daikin_Altherma_3_Top_Grade.png'},
+  {id:'altherma_mono', title:'Altherma Monobloc 2', type:'air-water', min:9, max:16, nominal:12, url:'luftvatten.html', image:'Image/IMG_Daikin_Altherma_Monoblock.png'},
+
+  // Berg/Jordvärme
+  {id:'altherma_geo', title:'Altherma 3 GEO', type:'geo', nominal:9.6, url:'bergvarme.html', image:'Image/IMG_Daikin_Altherma_GEO_3.png'}
+];
+
+/* ========== Hjälpfunktioner och antaganden ==========
+   - Grundantagande: 60 W/m² (0.06 kW/m²) för mellanzone.
+   - Zonmultiplikatorer: north 1.20, middle 1.00, south 0.90.
+   - Isoleringsfaktorer: 30-40cm -> 0.85, 20-30 -> 0.95, 10-20 -> 1.05, 0-10 -> 1.20
+   - Fönsterfaktor: 3-glas 0.9, 2-glas 1.0, 1-glas 1.15
+   - Rundning: uppåt till närmaste 0.5 kW vid rekommendation
+*/
+function getZoneMultiplier(z) {
+  if (z === 'north') return 1.20;
+  if (z === 'south') return 0.90;
+  return 1.00;
+}
+function getInsulationFactor(bucket) {
+  switch(bucket) {
+    case '30-40': return 0.85;
+    case '20-30': return 0.95;
+    case '10-20': return 1.05;
+    case '0-10':  return 1.20;
+    default: return 1.0;
+  }
+}
+function getWindowFactor(val) {
+  if (val === '3') return 0.9;
+  if (val === '1') return 1.15;
+  return 1.0;
+}
+function roundUpToHalf(x) {
+  return Math.ceil(x * 2) / 2;
+}
+
+/* ========== DOM och event ==========
+*/
+document.getElementById('calcBtn').addEventListener('click', runCalculation);
+document.getElementById('resetBtn').addEventListener('click', resetForm);
+document.getElementById('sendOfferBtn').addEventListener('click', saveAndPrepareOffer);
+document.getElementById('openContactFormBtn').addEventListener('click', openOfficeForm);
+
+/* Kör beräkning */
+function runCalculation() {
+  // Läs in värden (vi antar att användaren fyllt rimliga siffror)
+  const zone = document.getElementById('zone').value;
+  const area = parseFloat(document.getElementById('area').value) || 0;
+  const basement = parseFloat(document.getElementById('basement').value) || 0;
+  const attic = parseFloat(document.getElementById('attic').value) || 0;
+  const windows = document.getElementById('windows').value;
+  const insulation = document.getElementById('insulation').value;
+  const desiredType = document.getElementById('desiredType').value;
+
+  const totalArea = area + basement + attic;
+
+  // Parametrar
+  const baseWperM2 = 0.06; // kW per m2 = 60 W/m2
+  const zoneM = getZoneMultiplier(zone);
+  const insF = getInsulationFactor(insulation);
+  const winF = getWindowFactor(windows);
+
+  // Beräkning: effekt (kW)
+  // effekt = area * base * zone * isolering * fönster
+  const rawKW = totalArea * baseWperM2 * zoneM * insF * winF;
+  const neededKW = Math.max(0.5, roundUpToHalf(rawKW)); // minst 0.5 kW
+  const neededKWRounded = neededKW.toFixed(2);
+
+  // Visa sammanfattning
+  const summaryEl = document.getElementById('calcSummary');
+  summaryEl.innerHTML = `Total uppvärmd yta: <strong>${totalArea} m²</strong> (huvudbyggnad ${area}m², källare ${basement}m², vind ${attic}m²). Grundantagande: 60 W/m² justerat för zon, isolering och fönster.`;
+
+  document.getElementById('neededKW').innerText = neededKWRounded;
+
+  // Hämta rekommendationer
+  const recs = getRecommendations(neededKW, desiredType);
+
+  const recContainer = document.getElementById('recommendations');
+  recContainer.innerHTML = ''; // rensa
+
+  if (recs.length === 0) {
+    recContainer.innerHTML = `<p class="text-gray-700">Inga exakta matchningar hittades för det här kravet och typen. Överväg en större enhet eller kontakta oss för en platsbesiktning.</p>`;
+  } else {
+    const list = document.createElement('div');
+    list.className = 'grid grid-cols-1 md:grid-cols-3 gap-3';
+    recs.forEach(r => {
+      const card = document.createElement('div');
+      card.className = 'p-3 border rounded-lg bg-white';
+      card.innerHTML = `
+        <img src="${r.image}" alt="${r.title}" class="w-full h-28 object-contain mb-2" />
+        <div class="text-sm font-semibold text-gray-900">${r.title}</div>
+        <div class="text-xs text-gray-600">Typ: ${r.type}</div>
+        <div class="mt-2 text-sm">Nom. eff: <strong>${r.nominal} kW</strong></div>
+        <a href="${r.url}" class="mt-2 inline-block text-AccentR-500 text-sm font-semibold hover:underline">Produktinfo</a>
+      `;
+      list.appendChild(card);
+    });
+    recContainer.appendChild(list);
+  }
+
+  // Visa resultatkort
+  document.getElementById('resultCard').classList.remove('hidden');
+
+  // Spara senaste beräkningen i variabel ( används när användaren klickar "Skicka till offert" )
+  window.lastCalc = {
+    timestamp: new Date().toISOString(),
+    zone, area, basement, attic, totalArea, windows, insulation, desiredType,
+    neededKW: Number(neededKWRounded),
+    recs
+  };
+
+  // Förbered mailto-länk (fallback)
+  prepareMailto(window.lastCalc);
+}
+
+/* Enkel matchningsalgoritm:
+   - Filtrera produkter enligt desiredType (eller alla)
+   - Ta de produkter vars nominal (eller max) >= neededKW, annars välj de med störst nominal
+   - Sortera efter hur nära nominal är till neededKW (minimera överdimensionering)
+*/
+function getRecommendations(neededKW, desiredType) {
+  let candidates = PRODUCTS.slice();
+
+  if (desiredType !== 'any') {
+    candidates = candidates.filter(p => p.type === desiredType);
+  }
+
+  // Produkter som tekniskt klarar behov (nominal >= neededKW OR max >= neededKW)
+  const fits = candidates.filter(p => {
+    if (p.nominal && p.nominal >= neededKW) return true;
+    if (p.max && p.max >= neededKW) return true;
+    return false;
+  });
+
+  // Om vi hittar passande - rankera efter närhet (minimera nominal - needed)
+  if (fits.length > 0) {
+    fits.sort((a,b) => (a.nominal || a.max || 999) - (b.nominal || b.max || 999));
+    return fits.slice(0,3);
+  }
+
+  // Annars returnera de tre mest kraftfulla i kategorin (för att visa alternativ)
+  candidates.sort((a,b) => (b.nominal || b.max || 0) - (a.nominal || a.max || 0));
+  return candidates.slice(0,3);
+}
+
+function resetForm() {
+  document.getElementById('heatCalcForm').reset();
+  // återställ default-värden
+  document.getElementById('area').value = 100;
+  document.getElementById('basement').value = 0;
+  document.getElementById('attic').value = 0;
+  document.getElementById('resultCard').classList.add('hidden');
+  window.lastCalc = null;
+}
+
+function prepareMailto(calc) {
+  try {
+    const body = [
+      `Offertförfrågan - värmepumpsberäkning`,
+      ``,
+      `Datum: ${new Date().toLocaleString()}`,
+      `Zon: ${calc.zone}`,
+      `Total yta: ${calc.totalArea} m² (huvud: ${calc.area}, källare: ${calc.basement}, vind: ${calc.attic})`,
+      `Isolering: ${calc.insulation}`,
+      `Fönster: ${calc.windows}-glas`,
+      `Önskad typ: ${calc.desiredType}`,
+      `Beräknat effektbehov: ${calc.neededKW} kW`,
+      ``,
+      `Rekommendationer: ${calc.recs.map(r => r.title + ' (' + r.nominal + ' kW)').join('; ')}`,
+      ``,
+      `Vänligen återkom med offert och installationsförslag.`
+    ].join('\n');
+
+    const mailto = `mailto:info@suve.se?subject=${encodeURIComponent('Offertförfrågan värmepump')}&body=${encodeURIComponent(body)}`;
+    const a = document.getElementById('mailtoFallback');
+    a.href = mailto;
+    a.classList.remove('hidden');
+    a.innerText = 'Skicka via e-post';
+    a.onclick = function(){ /* låt det öppnas normalt */ };
+  } catch(e) {
+    console.warn('Kunde inte förbereda mailto', e);
+  }
+}
+
+/* Spara data & öppna offert (lokalt) */
+function saveAndPrepareOffer() {
+  if (!window.lastCalc) {
+    alert('Kör först en beräkning innan du skickar till offert.');
+    return;
+  }
+  // Spara i localStorage så ni kan läsa av dem i offertformuläret eller adminverktyg
+  localStorage.setItem('suve_last_calc', JSON.stringify(window.lastCalc));
+  alert('Uppgifterna sparades lokalt och kan användas i offertprocessen. Nu öppnar vi offertformuläret.');
+
+  // Försök öppna Office-iframe (simulera ett klick om ni har iframe i sidan)
+  // I originalsidan finns en container med id form-container som laddar en iframe vid klick.
+  // Vi försöker scrolla och "klicka" den så användaren får upp formuläret.
+  const container = document.getElementById('form-container');
+  if (container) {
+    // Om formuläret inte redan är inläst, trigga den klick-händelsen
+    try {
+      container.click();
+    } catch(e) {
+      // fallback: öppna ny flik till ert Office-formulär (sätt er riktiga URL här)
+      window.open('https://forms.office.com/Pages/ResponsePage.aspx?id=Z3EzYWv8l0Oh0wrsnckNZ-a22Sah3IlOvRSQSi9oJBtURVlJNFFBQ0UyNTNKQjlFVU1DVjhBV1JKQi4u', '_blank');
+    }
+  } else {
+    // Om inte container finns, öppna forms i ny flik
+    window.open('https://forms.office.com/Pages/ResponsePage.aspx?id=Z3EzYWv8l0Oh0wrsnckNZ-a22Sah3IlOvRSQSi9oJBtURVlJNFFBQ0UyNTNKQjlFVU1DVjhBV1JKQi4u', '_blank');
+  }
+}
+
+/* Öppna Office-formulär direkt (om användaren klickar) */
+function openOfficeForm() {
+  const container = document.getElementById('form-container');
+  if (container) {
+    container.click();
+  } else {
+    window.open('https://forms.office.com/Pages/ResponsePage.aspx?id=Z3EzYWv8l0Oh0wrsnckNZ-a22Sah3IlOvRSQSi9oJBtURVlJNFFBQ0UyNTNKQjlFVU1DVjhBV1JKQi4u', '_blank');
+  }
+}
+</script> -->
