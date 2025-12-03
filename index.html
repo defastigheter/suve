@@ -208,13 +208,15 @@ git push -f origin main
           class="block md:inline-block font-body hover:text-Gray-700 px-3 py-3 transition-colors duration-200"
           >Kontakt</a
         >
+        <a
+          href="#faq"
+          class="block md:inline-block font-body hover:text-Gray-700 px-3 py-3 transition-colors duration-200"
+          >Vanliga frågor</a
+        >
       </div>
 
       <div class="toggle hidden md:flex md:w-auto px-2 py-2">
-        <a href="login.html" class="font-body hover:text-Gray-700 px-4 py-3 transition-colors duration-200 flex items-center gap-2">
-          Logga in
-        </a>
-        <a href="index_english.html" class="font-body hover:text-Gray-700 px-4 py-3 transition-colors duration-200 flex items-center gap-2">
+        <a href="index_english.html" class="font-body hover:text-Gray-700 px-16 py-3 transition-colors duration-200 flex items-center gap-2">
           English
           <img src="Image/IMG_UK.png" alt="UK Flag" class="w-6 h-3 inline-block">
         </a>
@@ -454,6 +456,100 @@ class="hidden md:hidden absolute inset-0 w-full h-full object-cover object-cente
     </div>
   </div>
 </section>
+
+
+<!-- FAQ SECTION -->
+<section class="py-20 bg-neutral-100" id="faq">
+  <div class="max-w-4xl mx-auto px-4">
+    
+    <h2 class="font-heading uppercase text-Black text-4xl sm:text-5xl text-center mb-12">
+      Vanliga Frågor
+    </h2>
+
+    <div class="space-y-4">
+
+      <!-- FAQ ITEM -->
+      <div class="border border-gray-200 rounded-xl shadow-sm overflow-hidden">
+        <button class="w-full flex justify-between items-center p-5 text-left font-subheading text-xl faq-toggle">
+          <span>Utför ni installation och service av värmepumpar?</span>
+          <span class="text-2xl font-bold">+</span>
+        </button>
+        <div class="faq-content hidden p-5 pt-0 text-gray-700 font-body">
+          Ja, vi installerar och servar värmepumpar från Daikin i hela Örnsköldsviksområdet 
+          och övriga delar av Norrland. Vi erbjuder även rådgivning kring val av modell 
+          och dimensionering.
+        </div>
+      </div>
+
+      <!-- FAQ ITEM -->
+      <div class="border border-gray-200 rounded-xl shadow-sm overflow-hidden">
+        <button class="w-full flex justify-between items-center p-5 text-left font-subheading text-xl faq-toggle">
+          <span>Kan ni skapa specialanpassade produkter?</span>
+          <span class="text-2xl font-bold">+</span>
+        </button>
+        <div class="faq-content hidden p-5 pt-0 text-gray-700 font-body">
+          Absolut! Vi har lång erfarenhet av kundanpassade lösningar inom kyla, klimat 
+          och mekanik, bland annat elektronikkylare, klimataggregat och specialbyggda 
+          linspel för industriella miljöer.
+        </div>
+      </div>
+
+      <!-- FAQ ITEM -->
+      <div class="border border-gray-200 rounded-xl shadow-sm overflow-hidden">
+        <button class="w-full flex justify-between items-center p-5 text-left font-subheading text-xl faq-toggle">
+          <span>Hur gör jag en serviceförfrågan?</span>
+          <span class="text-2xl font-bold">+</span>
+        </button>
+        <div class="faq-content hidden p-5 pt-0 text-gray-700 font-body">
+          Du kan fylla i formuläret under kontaktdelen längst ned på sidan, eller ringa oss 
+          direkt på <a href="tel:+4666361720" class="underline text-AccentR-600">0663–61720</a>.
+          Vi återkopplar normalt inom 1–2 arbetsdagar.
+        </div>
+      </div>
+
+      <!-- FAQ ITEM -->
+      <div class="border border-gray-200 rounded-xl shadow-sm overflow-hidden">
+        <button class="w-full flex justify-between items-center p-5 text-left font-subheading text-xl faq-toggle">
+          <span>Arbetar ni mot företag eller privatpersoner?</span>
+          <span class="text-2xl font-bold">+</span>
+        </button>
+        <div class="faq-content hidden p-5 pt-0 text-gray-700 font-body">
+          Vi arbetar med både privatpersoner och företag. Våra specialprodukter riktar sig 
+          ofta till industri och offentlig sektor, medan våra värmepumpar är vanliga i hem 
+          och fritidshus.
+        </div>
+      </div>
+
+      <!-- FAQ ITEM -->
+      <div class="border border-gray-200 rounded-xl shadow-sm overflow-hidden">
+        <button class="w-full flex justify-between items-center p-5 text-left font-subheading text-xl faq-toggle">
+          <span>Hur länge har Suve Energiprodukter funnits?</span>
+          <span class="text-2xl font-bold">+</span>
+        </button>
+        <div class="faq-content hidden p-5 pt-0 text-gray-700 font-body">
+          Vi har funnits sedan 1980 och har över 40 års erfarenhet av effektiva och 
+          driftsäkra energilösningar.
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FAQ SCRIPT -->
+<script>
+  document.querySelectorAll(".faq-toggle").forEach(button => {
+    button.addEventListener("click", () => {
+      const content = button.nextElementSibling;
+      const symbol = button.querySelector("span:last-child");
+
+      content.classList.toggle("hidden");
+      symbol.textContent = symbol.textContent === "+" ? "–" : "+";
+    });
+  });
+</script>
+
+
 
 
 

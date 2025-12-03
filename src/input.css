@@ -78,6 +78,9 @@
 */
 @theme{
     --color-Red: #FF282C;
+    --color-SuveGray: #757575;
+    --color-SuvePalegreen: #A3B18A;
+    --color-SuveOlive: #5C6851;
     --color-RedHover: #CC2024;
     --color-AccentR-50: #feebeb;   /* Ljusaste, för lätt bakgrund */
     --color-AccentR-100: #fecaca; 
