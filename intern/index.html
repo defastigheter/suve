@@ -15,151 +15,43 @@ git push -f origin main
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="robots" content="noindex, nofollow">
     <title>Suve Energiprodukter AB</title>
     <!-- Favicon för alla webbläsare -->
 <!--<link rel="icon" href="favicon.ico" sizes="any"> -->
+<script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js"></script>
 
-<!-- PNG-favicon (för Google Search, Android, moderna webbläsare) -->
-<link rel="icon" type="image/png" href="favicon-96x96.png" sizes="96x96" />
-<link rel="icon" type="image/svg+xml" href="favicon.svg" />
-<link rel="shortcut icon" href="favicon.ico" />
-<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
-<meta name="apple-mobile-web-app-title" content="Suve AB" />
-<link rel="manifest" href="site.webmanifest" />
+<script>
+ // Import the functions you need from the SDKs you need
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
 
-    <link href="src/output.css" rel="stylesheet" />
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+	apiKey: "AIzaSyAwGzHithbnPShTRuFyJ51MP7BVXqPLBWE",
+    authDomain: "inloggning-82c77.firebaseapp.com",
+    projectId: "inloggning-82c77",
+    storageBucket: "inloggning-82c77.firebasestorage.app",
+    messagingSenderId: "1001491513108",
+    appId: "1:1001491513108:web:6cc392e5c798ebcfb68c01",
+    measurementId: "G-CFY1Q89MRD"
+};
 
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": ["LocalBusiness", "Store", "BuildingMaterialsStore"],
-        "name": "Suve Energiprodukter AB",
-        "description": "Suve Energiprodukter AB är din lokala expert på specialanpassade energiprodukter och klimatlösningar, med lång erfarenhet av driftsäkra och kundanpassade lösningar i Norrland och övriga Sverige.",
-        "url": "https://www.suve.se/",
-        "telephone": "+4666361720",
-        "email": "info@suve.se",
-        "image": [
-          "https://www.suve.se/Image/Logo Suve.png",
-          "https://www.suve.se/Image/IMG_Homepage_2.jpg"
-        ],
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "Brovägen 7",
-          "addressLocality": "Husum",
-          "postalCode": "896 31",
-          "addressCountry": "SE"
-        },
-        "geo": {
-          "@type": "GeoCoordinates",
-          "latitude": "63.33672",
-          "longitude": "19.16631"
-        },
-        "hasMap": "https://www.google.com/maps/search/?api=1&query=Brovägen+7+89631+Husum",
-        "openingHoursSpecification": [
-          {
-            "@type": "OpeningHoursSpecification",
-            "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
-            "opens": "08:00",
-            "closes": "16:00",
-            "description": "Kontor och kundservice är öppet vardagar. Kontakt via telefon eller e-post rekommenderas."
-          }
-        ],
-        "paymentAccepted": ["Invoice"],
-        "currenciesAccepted": "SEK",
-        "areaServed": [
-          {"@type": "Place","name": "Husum"},
-          {"@type": "AdministrativeArea","name": "Västernorrlands län"},
-          {"@type": "Country","name": "Sverige"}
-        ],
-        "founder": {
-          "@type": "Person",
-          "name": "Suve Energiprodukter AB",
-          "jobTitle": "Grundare & Ägare"
-        },
-        "sameAs": [
-          "https://www.instagram.com/SuveEnergiprodukter",
-          
-        ],
-        "keywords": "värmepumpar, klimatlösningar, energieffektiva system, Husum, Västernorrland, specialanpassade energiprodukter",
-        "hasOfferCatalog": {
-          "@type": "OfferCatalog",
-          "name": "Produktkatalog",
-          "itemListElement": [
-            {
-              "@type": "Offer",
-              "itemOffered": {
-                "@type": "Product",
-                "name": "Läcksökningsutrustning",
-                "description": "Läcksökningsutrustning lämpare sig för olika användningsområden, inklusive läckagekontroll av lykthus och bränsletankar.",
-                "url": "https://www.suve.se/lacksokningsutrustning.html",
-                "image": "https://www.suve.se/Image/IMG_LACKSOKNING.png"
-              }
-            },
-            {
-              "@type": "Offer",
-              "itemOffered": {
-                "@type": "Product",
-                "name": "Linspel",
-                "description": "Driftsäkra linspel för industriella applikationer, från lyft till drag.",
-                "url": "https://www.suve.se/linspel.html",
-                "image": "https://www.suve.se/Image/IMG_LINSPEL_02.png"
-              }
-            },
-            {
-              "@type": "Offer",
-              "itemOffered": {
-                "@type": "Product",
-                "name": "Klimataggregat RBV",
-                "description": "Klimataggregat RBV för klimatreglering av förarhytterna på Roslagsbanan.",
-                "url": "https://www.suve.se/rbv.html",
-                "image": "https://www.suve.se/Image/IMG_RBV_1.png"
-              }
-            },
-            {
-              "@type": "Offer",
-              "itemOffered": {
-                "@type": "Product",
-                "name": "Elektronikkylare LKD",
-                "description": "Mobil kylanläggning optimerad för stridsflygplanet F16, säkerställer stabil kylning av elektronik.",
-                "url": "https://www.suve.se/lkd.html",
-                "image": "https://www.suve.se/Image/IMG_LKD.JPG"
-              }
-            },
-            {
-              "@type": "Offer",
-              "itemOffered": {
-                "@type": "Product",
-                "name": "Värmepumpar",
-                "description": "Energieffektiva värmepumpar från Daikin, luft/luft, luft/vatten och bergvärme, anpassade för nordiskt klimat.",
-                "url": "https://www.suve.se/varmepumpar.html",
-                "image": "https://www.suve.se/Image/IMG_Daikin_Logo.png"
-              }
-            }
-          ]
-        }
-      }
-      </script>
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
+  firebase.initializeApp(firebaseConfig);
+  const auth = firebase.auth();
 
-      <style>
-        /* På skärmar under 768px: dölj slider, visa mobilbild */
-        @media (max-width: 768px) {
-          #hero-slider {
-            display: none !important;
-          }
-          #hero-mobile-image {
-            display: block !important;
-          }
-        }
-      
-        /* Desktop: visa slider, dölj mobilbild */
-        @media (min-width: 769px) {
-          #hero-mobile-image {
-            display: none !important;
-          }
-        }
-      </style>
-      
-      
+  auth.onAuthStateChanged(user => {
+    if (!user) {
+      // Användare inte inloggad → skicka till login
+      window.location.href = "../login.html";
+    }
+  });
+</script>
 
   </head>
 
@@ -211,36 +103,14 @@ git push -f origin main
       </div>
 
       <div class="toggle hidden md:flex md:w-auto px-2 py-2">
-        <a href="login.html" class="font-body hover:text-Gray-700 px-4 py-3 transition-colors duration-200 flex items-center gap-2">
-          Logga in
-        </a>
-        <a href="index_english.html" class="font-body hover:text-Gray-700 px-4 py-3 transition-colors duration-200 flex items-center gap-2">
-          English
-          <img src="Image/IMG_UK.png" alt="UK Flag" class="w-6 h-3 inline-block">
-        </a>
+       
         
 
         
-          <button
-  id="contactButton"
-  class="px-6 py-2 bg-AccentR-500 text-White font-body font-semibold rounded-lg shadow-md hover:bg-AccentR-600 focus:outline-none transition-all duration-200 flex items-center space-x-2"
->
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    fill="none"
-    viewBox="0 0 24 24"
-    stroke-width="1.5"
-    stroke="currentColor"
-    class="w-5 h-5"
-  >
-    <path
-      stroke-linecap="round"
-      stroke-linejoin="round"
-      d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"
-    />
-  </svg>
-  <span>Kontakta Oss</span>
-</button>
+		<button onclick="firebase.auth().signOut().then(()=>{window.location.href='../login.html'})">
+			Logga ut
+		  </button>
+		  
         </a>
       </div>
 
@@ -287,7 +157,7 @@ class="hidden md:hidden absolute inset-0 w-full h-full object-cover object-cente
   <div class="absolute inset-0 flex flex-col items-center justify-center text-center p-8 z-20">
    
     <p class="font-subheading text-gray-200 text-xl md:text-2xl mb-8 max-w-2xl">
-      "Din leverantör av specialanpassade energiprodukter"
+      Hej Leif!
     </p>
   </div>
 </section>
