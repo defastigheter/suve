@@ -19,6 +19,7 @@
     --color-neutral-200: oklch(92.2% 0 0);
     --color-neutral-300: oklch(87% 0 0);
     --color-neutral-400: oklch(70.8% 0 0);
+    --color-neutral-500: oklch(55.6% 0 0);
     --color-black: #000;
     --color-white: #fff;
     --spacing: 0.25rem;
@@ -87,9 +88,13 @@
     --color-KlipphallC-100: #efebe6;
     --color-KlipphallC-200: #dfd8ce;
     --color-KlipphallC-300: #cfc4b5;
+    --color-KlipphallC-400: #b9a993;
     --color-KlipphallC-500: #a38e71;
     --color-KlipphallC-600: #857156;
     --color-BokashiC-50: #f7f6ee;
+    --color-BokashiC-100: #eeeddd;
+    --color-BokashiC-200: #dcdab7;
+    --color-BokashiC-300: #cbc895;
     --color-BokashiC-400: #b8b570;
     --color-BokashiC-500: #a4a051;
     --color-BokashiC-600: #827f40;
@@ -667,8 +672,20 @@
   .bg-AccentR-600 {
     background-color: var(--color-AccentR-600);
   }
+  .bg-BokashiC-100 {
+    background-color: var(--color-BokashiC-100);
+  }
+  .bg-BokashiC-200 {
+    background-color: var(--color-BokashiC-200);
+  }
+  .bg-BokashiC-300 {
+    background-color: var(--color-BokashiC-300);
+  }
   .bg-BokashiC-400 {
     background-color: var(--color-BokashiC-400);
+  }
+  .bg-BokashiC-500 {
+    background-color: var(--color-BokashiC-500);
   }
   .bg-BokashiC-600 {
     background-color: var(--color-BokashiC-600);
@@ -682,11 +699,11 @@
   .bg-KlipphallC-100 {
     background-color: var(--color-KlipphallC-100);
   }
-  .bg-KlipphallC-500 {
-    background-color: var(--color-KlipphallC-500);
+  .bg-KlipphallC-200 {
+    background-color: var(--color-KlipphallC-200);
   }
-  .bg-KlipphallC-600 {
-    background-color: var(--color-KlipphallC-600);
+  .bg-KlipphallC-400 {
+    background-color: var(--color-KlipphallC-400);
   }
   .bg-PistageC-100 {
     background-color: var(--color-PistageC-100);
@@ -705,6 +722,9 @@
   }
   .bg-SuvePalegreen {
     background-color: var(--color-SuvePalegreen);
+  }
+  .bg-White {
+    background-color: var(--color-White);
   }
   .bg-black {
     background-color: var(--color-black);
@@ -727,11 +747,11 @@
   .bg-neutral-200 {
     background-color: var(--color-neutral-200);
   }
-  .bg-neutral-300 {
-    background-color: var(--color-neutral-300);
-  }
   .bg-neutral-400 {
     background-color: var(--color-neutral-400);
+  }
+  .bg-neutral-500 {
+    background-color: var(--color-neutral-500);
   }
   .bg-transparent {
     background-color: transparent;
@@ -810,9 +830,6 @@
   }
   .pt-4 {
     padding-top: calc(var(--spacing) * 4);
-  }
-  .pt-5 {
-    padding-top: calc(var(--spacing) * 5);
   }
   .pt-6 {
     padding-top: calc(var(--spacing) * 6);
@@ -925,9 +942,6 @@
   }
   .text-White {
     color: var(--color-White);
-  }
-  .text-black {
-    color: var(--color-black);
   }
   .text-gray-200 {
     color: var(--color-gray-200);
